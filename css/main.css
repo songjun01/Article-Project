@@ -1,0 +1,65 @@
+body {
+
+  background: #EEE;
+}
+#top-bar{
+  text-align: center;
+  position: fixed;
+  background-color: white;
+  margin: auto;
+}
+#home{
+  border: 0px;
+  outline: 0px;
+  background-color: white;
+}
+#home:hover{
+  opacity:0.7;
+}
+#profile{
+  border: 0px;
+  outline: 0px;
+  background-color: white;
+}
+#profile:hover{
+  opacity:0.7;
+}
+#main-contents{
+  padding-top: 70px;
+  background-color: white;
+  text-align: center;
+  margin: auto;
+}
+#article{
+  text-align: center;
+  margin: auto;
+}
+#like{
+  border: 0px;
+  outline: 0px;
+  background-color: white;
+}
+#like:hover{
+  opacity:0.7;
+}
+#point{
+  border: 0px;
+  outline: 0px;
+  background-color: white;
+}
+#point:hover{
+  opacity:0.7;
+}
+#bottom-bar{
+  background-color: white;
+}
+.firstbutton{
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+$('html').click(function(e){
+  if(!$(e.target).hasClass("profile-tables")){
+    console.log('영역 밖입니다.');
+  }
+});
