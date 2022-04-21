@@ -9,7 +9,7 @@
     <div id="top-bar" class="mx-auto" style="height:60px; width:100%; top:0px;">
       <div id="top-bar-menu" class="mx-auto" style="margin-top:5px; margin-left:20%; margin-right:20%; text-align:center; height:55px; width:60%; top:0px;">
         <button id="profile" type="button" name="profile-button" onclick="tableHide_Show()" style="text-align:center; margin-top:10px; margin-bottom:10px; float:right; width:50px; height:30px; cursor:pointer;"><img id="profile-img" src="c:/Programming/Atom/article project/img/profile.png" alt="" style="width:30px;"></button>
-        <button id="home" type="button" name="home-button" onclick="location.href='main.html'" style="text-align:center; margin-top:10px; margin-bottom:10px; float:right; width:50px; height:30px; cursor:pointer;"><img id="home-img" src="c:/Programming/Atom/article project/img/home.png" alt="" style="width:30px;"></button>
+        <button id="home" class="home" type="button" name="home-button" onclick="location.href='main.html'" style="text-align:center; margin-top:10px; margin-bottom:10px; float:right; width:50px; height:30px; cursor:pointer;"><img id="home-img" src="c:/Programming/Atom/article project/img/home.png" alt="" style="width:30px;"></button>
         <button type="button" name="search-button" class="btn btn-outline-primary" style="text-align:center; margin-top:15px; margin-bottom:15px; margin-right:10%; float:right; width:50px; height:30px; padding:0px; cursor:pointer;">검색</button>
         <input type="query" name="query" value="" placeholder="검색어를 입력하세요" style="margin-top:10px; margin-bottom:10px; margin-right:10px; float:right; width:30%; height:35px; background-color:whitesmoke; border:0 solid black; border-radius: 5px;">
       </div>
@@ -17,7 +17,7 @@
         <line x1=0 y1=5 x2=1520 y2=5 style="stroke:lightgray; stroke-width:0.7"></line>
       </svg>
       <table id="profile-tables" class="profile-tables" style="margin-top:-15px; margin-left:75%; width:150px; height:130px; background-color:whitesmoke; border:0 solid black; border-radius: 5px; display:none;">
-        <tr><td onclick="location.href='userProfile.html'" class="profile-tables" style="padding:10px; cursor:pointer;">프로필 페이지</td></tr>
+        <tr><td id="profilePage" class="profilePage" onclick="location.href='userProfile.html'" class="profile-tables" style="padding:10px; cursor:pointer;">프로필 페이지</td></tr>
         <tr><td onclick="location.href='setting.html'" class="profile-tables" style="padding:10px; cursor:pointer;">설정</td></tr>
         <tr><td onclick="location.href='login.html'" class="profile-tables" style="padding:10px; cursor:pointer;">로그아웃</td></tr>
       </table>

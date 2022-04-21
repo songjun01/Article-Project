@@ -1,13 +1,13 @@
-const main = document.querySelector("#main-contents");
+var userNumber=0;
 var num=1;
 
 function addArticle(articleTitle, articleDay, articleTime, reporterId, subscribeCount, articleReporter, articleLike, articleContent){
-  var a = document.querySelector('.main-contents');
+  var main = document.querySelector('.main-contents');
   var article = document.createElement('div');
   article.id="article";
   article.class="mx-auto";
   article.style="position:relativ; height:auto; width:60%; margin-top:30px; border:0.7px solid lightgray; text-align:left; border-radius: 5px;";
-  a.appendChild(article);
+  main.appendChild(article);
 
   var title = document.createElement('h3');
   title.id="title";
@@ -22,7 +22,7 @@ function addArticle(articleTitle, articleDay, articleTime, reporterId, subscribe
   date.innerHTML=(articleDay+" "+articleTime);
 
   var reporter = document.createElement('a');
-  reporter.href="reporter.html?reporterid="+reporterId;
+  reporter.href="reporter.html?reporterid="+reporterId+"&&userNumber="+userNumber;
   reporter.id="reporter";
   reporter.style="text-align:left; padding-left:30px; height:20px; width:100px; text-decoration-line:none; color:black;";
   article.appendChild(reporter);
@@ -150,12 +150,23 @@ function likeClick(click_num){
   console.log("cnt : "+cnt);
 }
 window.onload = function viewContents(){
+  userNumber = getParameterByName('userNumber');
+  var home=document.querySelector('.home');
+  home.setAttribute("onclick","location.href='main.html?userNumber="+userNumber+"'")
+  var profile=document.querySelector('.profilePage');
+  profile.setAttribute("onclick","location.href='userProfile.html?userNumber="+userNumber+"'");
+  history.replaceState({}, null, location.pathname);
   let mIdx = 0;
   var m = document.querySelector('.main-contents');
   for(let i=0;i<articleList.length;i++){
     addArticle(articleList[i].title, articleList[i].day, articleList[i].time, articleList[i].reporterId, articleList[i].subscribe, articleList[i].reporter, articleList[i].likeCount, articleList[i].content);
     num++;
   }
+}
+function getParameterByName(id){
+  id = id.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + id + "=([^&#]*)"), results = regex.exec(location.search);
+  return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 $(function(){
 	$(document).mousedown(function(e){

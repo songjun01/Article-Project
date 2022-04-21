@@ -1,3 +1,4 @@
+var userNumber=0;
 var num=1;
 
 function reporterProfile(para_reporterId,para_subscribeCount,para_startDate,para_reporterName,para_reporterField){
@@ -159,7 +160,12 @@ function likeClick(click_num){
 }
 window.onload = function reporterPageEnter(){
   var id = getParameterByName('reporterid');
-  console.log("id : "+id);
+  userNumber = getParameterByName('userNumber');
+  var home=document.querySelector('.home');
+  home.setAttribute("onclick","location.href='main.html?userNumber="+userNumber+"'")
+  var profile=document.querySelector('.profilePage');
+  profile.setAttribute("onclick","location.href='userProfile.html?userNumber="+userNumber+"'");
+  history.replaceState({}, null, location.pathname);
   for(let i=0;i<articleList.length;i++){
     if(articleList[i].reporterId==id)
     reporterArticle(articleList[i].title, articleList[i].day, articleList[i].time, articleList[i].reporterId, articleList[i].subscribe, articleList[i].reporter, articleList[i].likeCount, articleList[i].content);
