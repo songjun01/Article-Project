@@ -136,6 +136,11 @@ function likeClick(click_num){
   if(target.src=="file:///C:/Programming/Atom/article%20project/img/like-black.png"){
     target.src="c:/Programming/Atom/article project/img/like-red.png";
     cnt++;
+    for(let i=0;i<articleList.length;i++){
+      if((i+1)==click_num){
+        articleList[i].likeCount++;
+      }
+    }
   }
   else if(target.src=="file:///C:/Programming/Atom/article%20project/img/like-red.png"){
     target.src="c:/Programming/Atom/article project/img/like-black.png";

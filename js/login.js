@@ -6,6 +6,7 @@ function loginClick(){
       if(userProfileList[i].pw==inputPw){
         console.log("id : "+userProfileList[i].id+"\npw : "+userProfileList[i].pw+"\nuserNumber : "+userProfileList[i].userNumber);
         window.location.href='main.html?userNumber='+userProfileList[i].userNumber;
+        return;
       }
     }
     console.log("아이디 또는 비밀번호가 일치하지 않습니다");//한번만 시행되게
