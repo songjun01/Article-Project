@@ -57,7 +57,7 @@ function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subs
 
   var point_img=document.createElement('img');
   point_img.id="point-img"+String(num);
-  point_img.src="c:/Programming/Atom/article project/img/point.png";
+  point_img.src="c:/Programming/HTML/article project/img/point.png";
   point_img.alt="";
   point_img.style="height:20px; width:5px;";
   point.appendChild(point_img);
@@ -99,7 +99,7 @@ function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subs
 
   var like_img=document.createElement('img');
   like_img.id="like-img"+String(num);
-  like_img.src="c:/Programming/Atom/article project/img/like-black.png";
+  like_img.src="c:/Programming/HTML/article project/img/like-black.png";
   like_img.alt="";
   like_img.style="width:25px;";
   like.appendChild(like_img);
@@ -142,12 +142,12 @@ function likeClick(click_num){
   const targetLikeCnt=document.getElementById('like-count'+String(click_num));
   console.log("text : "+targetLikeCnt.innerHTML);
   var cnt=Number(targetLikeCnt.innerHTML);
-  if(target.src=="file:///C:/Programming/Atom/article%20project/img/like-black.png"){
-    target.src="c:/Programming/Atom/article project/img/like-red.png";
+  if(target.src=="file:///C:/Programming/HTML/article%20project/img/like-black.png"){
+    target.src="c:/Programming/HTML/article project/img/like-red.png";
     cnt++;
   }
-  else if(target.src=="file:///C:/Programming/Atom/article%20project/img/like-red.png"){
-    target.src="c:/Programming/Atom/article project/img/like-black.png";
+  else if(target.src=="file:///C:/Programming/HTML/article%20project/img/like-red.png"){
+    target.src="c:/Programming/HTML/article project/img/like-black.png";
     cnt--;
   }
   for(let i=0;i<articleList.length;i++){
