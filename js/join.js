@@ -1,21 +1,19 @@
 function joinClick(){
-  var id;
-  var pw;
-  var pwEqual=1;
-  var num=0;
-  var emptyCount=0;
+  let pwEqual=1;
+  let num=0;
+  let emptyCount=0;
 
-  var joinInputName=document.querySelector('.joinInputName').value;
-  var joinInputId=document.querySelector('.joinInputId').value;
-  var joinInputPw=document.querySelector('.joinInputPw').value;
-  var joinInputPwOk=document.querySelector('.joinInputPwOk').value;
-  var joinInputField=document.querySelector('.joinInputField').value;
+  const joinInputName=document.querySelector('.joinInputName').value;
+  const joinInputId=document.querySelector('.joinInputId').value;
+  const joinInputPw=document.querySelector('.joinInputPw').value;
+  const joinInputPwOk=document.querySelector('.joinInputPwOk').value;
+  const joinInputField=document.querySelector('.joinInputField').value;
 
-  var noneNameTag=document.querySelector('.noneNameTag');
-  var noneIdTag=document.querySelector('.noneIdTag');
-  var nonePwTag=document.querySelector('.nonePwTag');
-  var nonePwOkTag=document.querySelector('.nonePwOkTag');
-  var noneFieldTag=document.querySelector('.noneFieldTag');
+  const noneNameTag=document.querySelector('.noneNameTag');
+  const noneIdTag=document.querySelector('.noneIdTag');
+  const nonePwTag=document.querySelector('.nonePwTag');
+  const nonePwOkTag=document.querySelector('.nonePwOkTag');
+  const noneFieldTag=document.querySelector('.noneFieldTag');
 
   noneNameTag.innerHTML="";
   noneIdTag.innerHTML="";

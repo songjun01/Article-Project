@@ -10,8 +10,8 @@ function loginClick(){
       }
     }
     console.log("아이디 또는 비밀번호가 일치하지 않습니다");//한번만 시행되게
-    var main = document.querySelector('.main');
-    var noneIdTag=document.querySelector('p');
+    const main = document.querySelector('.main');
+    const noneIdTag=document.querySelector('p');
     main.style="margin-top:200px; width:350px; height:310px; border:1px solid lightgray; background:white; border-radius:10px;";
     noneIdTag.innerHTML="아이디 또는 비밀번호가 일치하지 않습니다";
   }

@@ -1,5 +1,5 @@
-var userNumber=0;
-var num=1;
+let userNumber=0;
+let num=1;
 
 function reporterProfile(para_reporterId,para_subscribeCount,para_startDate,para_reporterName,para_reporterField){
   const name = document.getElementById('reporterName');
@@ -10,33 +10,33 @@ function reporterProfile(para_reporterId,para_subscribeCount,para_startDate,para
   subscribeCnt.innerHTML="구독자 : "+para_subscribeCount+"명";
 }
 function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subscribeCount, articleReporter, articleLike, articleContent){
-  var a = document.querySelector('.reporter-article');
-  var article = document.createElement('div');
+  const a = document.querySelector('.reporter-article');
+  const article = document.createElement('div');
   article.id="article";
   article.class="mx-auto";
   article.style="height:auto; width:90%; margin-left:5%; margin-right:5%; margin-top:30px; border:0.7px solid lightgray; text-align:left;";
   a.appendChild(article);
 
-  var title = document.createElement('h3');
+  const title = document.createElement('h3');
   title.id="title";
   title.style="text-align:left; padding-top:30px; padding-left:30px; padding-bottom:0px; height:auto; width:90%;";
   article.appendChild(title);
   title.name=articleTitle;
   title.innerHTML=articleTitle;
 
-  var date = document.createElement('p');
+  const date = document.createElement('p');
   date.style="text-align:left; padding-left:30px; padding-bottom:0px; height:20px; width:50%; margin-top:0px; margin-bottom:0px;";
   article.appendChild(date);
   date.innerHTML=(articleDay+" "+articleTime);
 
-  var reporter = document.createElement('a');
+  const reporter = document.createElement('a');
   reporter.href="reporter.html?reporterid="+reporterId;
   reporter.id="reporter";
   reporter.style="text-align:left; padding-left:30px; height:20px; width:100px; text-decoration-line:none; color:black;";
   article.appendChild(reporter);
   reporter.innerHTML=articleReporter+" 기자";
 
-  var subscribe = document.createElement('button');
+  const subscribe = document.createElement('button');
   subscribe.id="subscribe-button"+String(num);
   subscribe.type="button";
   subscribe.name="subscribe-button";
@@ -46,7 +46,7 @@ function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subs
   article.appendChild(subscribe);
   subscribe.innerHTML="구독하기";
 
-  var point=document.createElement('button');
+  const point=document.createElement('button');
   point.id="point";
   point.type="button";
   point.className="point-button";
@@ -55,41 +55,41 @@ function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subs
   point.style="text-align:center; margin-top:-25px; margin-left:95%; margin-right:20px; float:right; padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px; height:20px; width:5px; cursor:pointer;";
   article.appendChild(point);
 
-  var point_img=document.createElement('img');
+  const point_img=document.createElement('img');
   point_img.id="point-img"+String(num);
   point_img.src="c:/Programming/HTML/article project/img/point.png";
   point_img.alt="";
   point_img.style="height:20px; width:5px;";
   point.appendChild(point_img);
 
-  var point_table=document.createElement('table');
+  const point_table=document.createElement('table');
   point_table.id="point-tables"+String(num);
   point_table.className="point-tables"+String(num);
   point_table.style="position:absolute; margin-top:10px; margin-left:50%; width:150px; height:40px; background-color:whitesmoke; border:0 solid black; border-radius: 5px; display:none;";
   article.appendChild(point_table);
 
-  var point_table_tr=document.createElement('tr');
+  const point_table_tr=document.createElement('tr');
   point_table.appendChild(point_table_tr);
 
-  var point_table_td=document.createElement('td');
+  const point_table_td=document.createElement('td');
   point_table_td.className="point-tables";
   point_table_td.style="padding:10px; cursor:pointer;";
   point_table_tr.appendChild(point_table_td);
   point_table_td.innerHTML="기사 신고";
 
-  var contents_box = document.createElement('div');
+  const contents_box = document.createElement('div');
   contents_box.id="contents_box";
   contents_box.class="mx-auto";
   contents_box.style="height:auto; width:auto; margin-top:20px; margin-left:10px; margin-right:10px; margin-bottom:10px; border:2px solid whitesmoke;";
   article.appendChild(contents_box);
 
-  var content = document.createElement('p');
+  const content = document.createElement('p');
   content.id="content";
   content.style="text-align:left; padding-top:10px; padding-left:10px; height:auto; width:95%;";
   contents_box.appendChild(content);
   content.innerHTML=articleContent;
 
-  var like = document.createElement('button');
+  const like = document.createElement('button');
   like.id="like";
   like.type="button";
   like.name="like"+String(num);
@@ -97,14 +97,14 @@ function reporterArticle(articleTitle, articleDay, articleTime, reporterId, subs
   like.style="text-align:center; margin-left:30px; margin-bottom:20px; padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px; height:30px; width:30px; cursor:pointer;";
   article.appendChild(like);
 
-  var like_img=document.createElement('img');
+  const like_img=document.createElement('img');
   like_img.id="like-img"+String(num);
   like_img.src="c:/Programming/HTML/article project/img/like-black.png";
   like_img.alt="";
   like_img.style="width:25px;";
   like.appendChild(like_img);
 
-  var likeCnt=document.createElement('p');
+  const likeCnt=document.createElement('p');
   likeCnt.id="like-count"+String(num);
   likeCnt.style="text-align:left; margin-top:-47px; margin-left:60px; width:100px";
   article.appendChild(likeCnt);
@@ -141,7 +141,7 @@ function likeClick(click_num){
   const target = document.getElementById('like-img'+String(click_num));
   const targetLikeCnt=document.getElementById('like-count'+String(click_num));
   console.log("text : "+targetLikeCnt.innerHTML);
-  var cnt=Number(targetLikeCnt.innerHTML);
+  let cnt=Number(targetLikeCnt.innerHTML);
   if(target.src=="file:///C:/Programming/HTML/article%20project/img/like-black.png"){
     target.src="c:/Programming/HTML/article project/img/like-red.png";
     cnt++;
@@ -159,11 +159,11 @@ function likeClick(click_num){
   console.log("cnt : "+cnt);
 }
 window.onload = function reporterPageEnter(){
-  var id = getParameterByName('reporterid');
+  const id = getParameterByName('reporterid');
   userNumber = getParameterByName('userNumber');
-  var home=document.querySelector('.home');
+  const home=document.querySelector('.home');
   home.setAttribute("onclick","location.href='main.html?userNumber="+userNumber+"'")
-  var profile=document.querySelector('.profilePage');
+  const profile=document.querySelector('.profilePage');
   profile.setAttribute("onclick","location.href='userProfile.html?userNumber="+userNumber+"'");
   history.replaceState({}, null, location.pathname);
   for(let i=0;i<articleList.length;i++){
@@ -179,14 +179,14 @@ window.onload = function reporterPageEnter(){
 }
 function getParameterByName(id){
   id = id.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp("[\\?&]" + id + "=([^&#]*)"), results = regex.exec(location.search);
+  const regex = new RegExp("[\\?&]" + id + "=([^&#]*)"), results = regex.exec(location.search);
   return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 $(function(){
 	$(document).mousedown(function(e){
 		if($("#profile-tables").is(":visible")){
 			$("#profile-tables").each(function(){
-				var l_position=$(this).offset();
+				const l_position=$(this).offset();
 				l_position.right=parseInt(l_position.left)+($(this).width());
 				l_position.bottom=parseInt(l_position.top)+parseInt($(this).height());
 				if((l_position.left<=e.pageX&&e.pageX<=l_position.right)&&(l_position.top<=e.pageY&&e.pageY<=l_position.bottom)){
@@ -203,7 +203,7 @@ $(function(){
     for(let i=1; i<=articleList.length;i++){
     	if($("#point-tables"+String(i)).is(":visible")){
     		$("#point-tables"+String(i)).each(function(){
-    			var l_position=$(this).offset();
+    			const l_position=$(this).offset();
     			l_position.right=parseInt(l_position.left)+($(this).width());
     			l_position.bottom=parseInt(l_position.top)+parseInt($(this).height());
     			if((l_position.left<=e.pageX&&e.pageX<=l_position.right)&&(l_position.top<=e.pageY&&e.pageY<=l_position.bottom)){
